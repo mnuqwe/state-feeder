@@ -29,7 +29,8 @@ The Automatic Logging System involves the use of following hardware components.
 
 
 
-WORKING
+# WORKING
+
 Once  the device is connected to the generator, and the raspberry pi is powered on, the device starts taking input from the General Purpose Input Output pins. The pins are connected to the power source via a voltage step down regulator which regulates the voltage of the power source from the general 230V Alternating Current to a 3.3V Direct Current to enable the GPIO pins to read inputs without suffering damage. When the generator switch is turned on, i.e. the generator is being used, the GPIO pins receive a high signal and when the switch is turned off the GPIO pins receive a low signal. The high signal is treated as 1 or True in Boolean value and the low signal is treated as 0 or False in Boolean value. 
 A main python program drives the entire system. It aims at maintaining separate excel spreadsheets for each day and storing each day’s log in the respective file. A default format for initial information is maintained in a separate file and it’s content is copied to each new spreadsheet created before the data from the device is entered. The basic format of the spreadsheet includes the following attributes – Refernece number, Date, On Time, Off Time and Total Time.
 First, the python program imports the RPi.GPIO, openpyxl, shutil, xlsxwriter and os modules. The RPi.GPIO module provides a class for controlling the GPIO pins and thus helps in detecting the high and low signals in the GPIO pins. The program now waits until the GPIO receive a high signal, indicating that the generator has been powered up. On receiving the signal the program checks if the excel spreadsheet for today was already created using the imported package os. If not, a new file for today’s entries is created using the imported package xlsxwriter and the default content is copied from a separately maintained spreadsheet using the imported package shutil. 
