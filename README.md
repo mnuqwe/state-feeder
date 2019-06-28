@@ -1,8 +1,9 @@
-# state-feeder
+# State-Feeder
 An automatic logging system for recording the durations for which a generator operates and maintaining the logs in a database. This system involves a raspberry pi unit with an operating system installed within to enable interaction with the user, a voltage step down regulator for enabling the GPIO pins within the raspberry pi unit to be connected to the generator power supply, a storage device for maintaining the logs, and a power backup for powering up the unit. This system allows the user to have easy access to the running times of the generator in a tabular format and automates the process of calculation of fuel consumption and estimation for future fuel needs.
 
 
-HARDWARE COMPONENTS
+# HARDWARE COMPONENTS
+
 The Automatic Logging System involves the use of following hardware components.
 1. A Raspberry Pi Unit : A raspberry pi is a small general purpose computer capable of performing tasks that a general desktop computer would do, when used along with a keyboard, a mouse and a desktop. A raspberry pi 3B+(used in this project) within itself contains following components.
 1a. A processor
@@ -15,7 +16,8 @@ The Automatic Logging System involves the use of following hardware components.
 3. A Storage Device : A storage device, in form of a micro SD card is used in the current version of the project. The storage space is required for installing the operating system to enable interaction with the user, as well as providing storage for the logs to be maintained in form of a database. This is also where the scripts of codes that enable the working of the system are stored.
 4. Power Backup : In order to power up the device a power bank is provided in the current version of the product that connects to the raspberry pi unit through the micro USB port provided on the raspberry pi via the use of a USB to micro USB cable. The power bank in turn can be recharged with the use of a general purpose smartphone charger with micro USB output cable.
 
-SOFTWARE
+# SOFTWARE
+
 1. Operating System : At the core of the system is the Raspbian Operating System installed on to the raspberry pi. This operating system is based on linux and provides user with ability to interact with the raspberry pi.
 2. Python Interpreter: The core program of the invention is implemented in the python language and run using the python interpreter pre-installed on the raspbian operating system. Apart from this following packages are needed to be imported into the program to enable proper functioning of the device.
 2a. RPi.GPIO : Used for communicating with the GPIO pins in the raspberry pi, in this case, for reading input as high or low.
